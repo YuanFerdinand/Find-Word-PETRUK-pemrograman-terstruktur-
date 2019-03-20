@@ -36,6 +36,7 @@ int main ()
 	for(i=0;i<15;i++){
 		for(j=0;j<15;j++){
 			if(kata[0]==*(*(table+i)+j)){
+				
 				//Diagonal kanan atas
 				for(k=0;k<jumlah;k++){
 					if(kata[k]==*(*(table+(i-k))+(j+k))){
@@ -52,6 +53,7 @@ int main ()
 					coba=coba+0;
 				}
 				uji=0;
+				
 				//Diagonal kanan bawah
 				for(k=0;k<jumlah;k++){
 					if(kata[k]==*(*(table+(i+k))+(j+k))){
@@ -68,6 +70,7 @@ int main ()
 					coba=coba+0;
 				}
 				uji=0;
+				
 				//====Atas
 				for(k=0;k<jumlah;k++){
 					if(kata[k]==*(*(table+(i-k))+(j))){
@@ -80,9 +83,34 @@ int main ()
 				else{
 					coba=coba+0;}
 				uji=0;
+				
 				//====Bawah
 				for(k=0;k<jumlah;k++){
 					if(kata[k]==*(*(table+(i+k))+(j))){
+						uji=k;}
+					else{
+						break;}
+				}
+				if(uji==jumlah-1){
+					coba=coba+1;}
+				else{
+					coba=coba+0;}
+				uji=0;
+				
+				//====diagonal kiri atas
+				for(k=0;k<jumlah;k++){
+					if(kata[k]==*(*(table+(i-k))+(j-k))){
+						uji=k;}
+					else{
+						break;}
+				}
+				if(uji==jumlah-1){
+					coba=coba+1;}
+				else{
+					coba=coba+0;}
+				uji=0;//====diagonal kiri bawah
+				for(k=0;k<jumlah;k++){
+					if(kata[k]==*(*(table+(i+k))+(j-k))){
 						uji=k;}
 					else{
 						break;}
