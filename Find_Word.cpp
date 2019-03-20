@@ -108,9 +108,36 @@ int main ()
 					coba=coba+1;}
 				else{
 					coba=coba+0;}
-				uji=0;//====diagonal kiri bawah
+				uji=0;
+				
+				//====diagonal kiri bawah
 				for(k=0;k<jumlah;k++){
 					if(kata[k]==*(*(table+(i+k))+(j-k))){
+						uji=k;}
+					else{
+						break;}
+				}
+				if(uji==jumlah-1){
+					coba=coba+1;}
+				else{
+					coba=coba+0;}
+				uji=0;
+				
+				//==== kanan
+				for(int k=0;k<jumlah;k++){
+					if(kata[k]==*(*(table+(i))+(j+k))){
+						uji=k;}
+					else{
+						break;}
+				}
+				if(uji==jumlah-1){
+					coba=coba+1;}
+				else{
+					coba=coba+0;}
+				uji=0;
+				//==== kiri
+				for(int k=0;k<jumlah;k++){
+					if(kata[k]==*(*(table+(i))+(j-k))){
 						uji=k;}
 					else{
 						break;}
