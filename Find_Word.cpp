@@ -68,6 +68,30 @@ int main ()
 					coba=coba+0;
 				}
 				uji=0;
+				//====Atas
+				for(k=0;k<jumlah;k++){
+					if(kata[k]==*(*(table+(i-k))+(j))){
+						uji=k;}
+					else{
+						break;}
+				}
+				if(uji==jumlah-1){
+					coba=coba+1;}
+				else{
+					coba=coba+0;}
+				uji=0;
+				//====Bawah
+				for(k=0;k<jumlah;k++){
+					if(kata[k]==*(*(table+(i+k))+(j))){
+						uji=k;}
+					else{
+						break;}
+				}
+				if(uji==jumlah-1){
+					coba=coba+1;}
+				else{
+					coba=coba+0;}
+				uji=0;
 			}
 		}
 	}
